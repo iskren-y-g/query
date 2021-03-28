@@ -1,5 +1,7 @@
 # Query HyperLEDA (query.hyperleda)
+
 Query from the HyperLEDA web data access service
+
 ---------
 (NB: I'm making this module available for an early use, while waiting for PR review <a href="https://github.com/astropy/astroquery/pull/2023">2023</a> to <a href="https://github.com/astropy/astroquery">astroquery</a>).
 
