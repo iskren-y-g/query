@@ -19,15 +19,11 @@ Query the object by name. For instance if you want to query UGC 1259
 
 
 ```python
-import os
-import sys
 
-sys.path.insert(0, os.path.abspath('../'))
+>>> from query import hyperleda
 
-from query import hyperleda
-
-result_table = hyperleda.query_object('UGC12591' , properties='all')
-print(result_table) # an astropy.table.Table
+>>> result_table = hyperleda.query_object('UGC12591' , properties='all')
+>>> print(result_table) # an astropy.table.Table
 
 ```
 
@@ -41,8 +37,8 @@ To see all available <code>properties</code> that HyperLEDA returns:
 
 
 ```python
-properties_tbl = hyperleda.get_properties()
-properties_tbl.pprint_all()
+>>> properties_tbl = hyperleda.get_properties()
+>>> properties_tbl.pprint_all()
 ```
 
         field      type       units                                         description                                   
@@ -147,10 +143,10 @@ Retrieve only a subset from the available <code>properties</code>:
 
 ```python
 
-result_table = hyperleda.query_object('UGC12591' , properties='objname, type,\
+>>> result_table = hyperleda.query_object('UGC12591' , properties='objname, type,\
                                       logr25, btc, v, modbest, al2000, de2000,\
                                       celposJ(pgc)')
-result_table.pprint_all()
+>>> result_table.pprint_all()
 ```
 
     objname  type logr25  btc     v    modbest   al2000     de2000     celposJ(pgc)  
@@ -166,19 +162,19 @@ An example for querying using SQL WHERE clause syntax as in <a href="http://leda
 
 ```python
 # The SQL sample_query is the WHERE clause is to filter by properties
-sample_query = "(modbest<=30 and t>=-3 and t<=0 and type='S0') \
+>>> sample_query = "(modbest<=30 and t>=-3 and t<=0 and type='S0') \
 or (modbest<=30 and t>=-3 and t<=0 and type='S0-a')"
 
 # Select some properties to retrieve
-sample_properties= 'objname, al2000, de2000, type, logr25, btc, e_bt, v, modbest'
+>>> sample_properties= 'objname, al2000, de2000, type, logr25, btc, e_bt, v, modbest'
 
 # Run the query
-result_table = hyperleda.query_sql(sample_query, properties=sample_properties)
+>>> result_table = hyperleda.query_sql(sample_query, properties=sample_properties)
 ```
 
 
 ```python
-result_table.pprint(max_lines=5, max_width=-1)
+>>> result_table.pprint(max_lines=5, max_width=-1)
 ```
 
      objname     al2000     de2000   type logr25  btc    e_bt   v   modbest
@@ -190,8 +186,3 @@ result_table.pprint(max_lines=5, max_width=-1)
        NGC5455 14.0503204 54.2414569   S0   0.11 15.175   0.5 259.9   29.67
     Length = 19 rows
 
-
-
-```python
-
-```
