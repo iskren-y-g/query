@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/queryhyperleda/badge/?version=latest)](https://queryhyperleda.readthedocs.io/en/latest/?badge=latest)
+
 # Query HyperLEDA (query.hyperleda)
 
 Query from the HyperLEDA web data access service
